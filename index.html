@@ -31,20 +31,16 @@
   .container { max-width: 620px; margin: 0 auto; padding: 0 28px; }
 
   /* Header */
-  header { border-bottom: 1px solid var(--border); padding: 40px 0 36px; }
-  .masthead { display: flex; align-items: flex-start; gap: 18px; }
-  .masthead-mark { display: flex; flex-direction: column; gap: 7px; padding-top: 6px; flex-shrink: 0; }
-  .masthead-mark span { display: block; height: 5px; border-radius: 2px; background: var(--blue); }
-  .masthead-mark span.red { background: var(--red); width: 20px; }
-  .masthead-text { display: flex; flex-direction: column; }
-  .masthead-wordmark { font-family: var(--mono); font-size: 48px; font-weight: 500; color: var(--blue); letter-spacing: .06em; line-height: 1; margin-bottom: 8px; }
-  .masthead-tagline { font-family: var(--mono); font-size: 11px; font-weight: 400; color: #9aa8b4; letter-spacing: .3em; text-transform: uppercase; margin-bottom: 10px; }
-  .masthead-divider { border: none; border-top: 1px solid var(--border); margin: 0 0 10px; }
-  .masthead-strapline { font-family: var(--sans); font-size: 15px; font-weight: 400; color: var(--muted); letter-spacing: .04em; margin-left: 2px; }
+  header { border-bottom: 1px solid var(--border); padding: 28px 0 24px; }
+  .wordmark { font-family: var(--mono); font-size: 13px; font-weight: 500; letter-spacing: .18em; text-transform: uppercase; color: var(--blue); display: flex; align-items: center; }
+  .wordmark-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--red); margin-left: 3px; flex-shrink: 0; }
 
   /* Hero */
   .hero { padding: 64px 0 52px; border-bottom: 1px solid var(--border); }
-
+  .hero-label { font-family: var(--mono); font-size: 11px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+  .hero h1 { font-family: var(--mono); font-size: clamp(26px, 5vw, 38px); font-weight: 500; line-height: 1.2; color: var(--blue); margin-bottom: 24px; letter-spacing: -.01em; }
+  .cursor { display: inline-block; width: 2px; height: 0.85em; background: var(--red); margin-left: 3px; vertical-align: middle; animation: blink 1.1s step-end infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
   .hero-sub { font-size: 17px; line-height: 1.65; color: var(--body); margin-bottom: 16px; }
   .beta-badge { display: inline-block; font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .12em; text-transform: uppercase; color: var(--red); border: 1px solid var(--red); padding: 3px 8px; border-radius: 3px; margin-bottom: 32px; }
 
@@ -81,12 +77,12 @@
   .sample-link:hover { background: var(--blue); color: #fff; text-decoration: none; }
 
   /* Footer */
-  footer { border-top: 1px solid var(--border); padding: 32px 0 44px; }
+  footer { padding: 32px 0 44px; }
   .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
   .footer-copy { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; color: var(--muted); }
-  .footer-links { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; display: flex; gap: 20px; }
-  .footer-links a { color: var(--muted); }
-  .footer-links a:hover { color: var(--blue); }
+  .footer-contact { font-family: var(--mono); font-size: 11px; letter-spacing: .06em; }
+  .footer-contact a { color: var(--muted); }
+  .footer-contact a:hover { color: var(--blue); }
 
   @media (max-width: 480px) {
     .hero { padding: 44px 0 40px; }
@@ -104,20 +100,7 @@
 
 <header>
   <div class="container">
-    <div class="masthead" role="banner">
-      <div class="masthead-mark" aria-hidden="true">
-        <span style="width:42px;"></span>
-        <span style="width:30px;"></span>
-        <span style="width:36px;"></span>
-        <span class="red"></span>
-      </div>
-      <div class="masthead-text">
-        <div class="masthead-wordmark">NIBs</div>
-        <div class="masthead-tagline">News Intelligence Briefing</div>
-        <hr class="masthead-divider">
-        <div class="masthead-strapline">The 6am catch-up</div>
-      </div>
-    </div>
+    <div class="wordmark">NIBs<span class="wordmark-dot" aria-hidden="true"></span></div>
   </div>
 </header>
 
@@ -125,18 +108,18 @@
 
   <section class="hero">
     <div class="container">
-
+      <p class="hero-label">Weekday mornings &middot; 6am</p>
+      <h1>UK broadcast news,<br>6am catch-up<span class="cursor" aria-hidden="true"></span></h1>
       <p class="hero-sub">Missed the bulletins last night? NIBs delivers full running orders for BBC News at Ten, ITV News at Ten, Newsnight and Channel 4 News &mdash; plus headline details for Sky and GB News &mdash; direct to your inbox by 6am. Every item timed, every reporter and contributor named.</p>
-      <p class="hero-sub">You also get a complete log of what led the BBC News website through the day, sampled every ten minutes; all videos published to the BBC News YouTube channel; push notifications from the BBC News app; and the running order for the <em>R4 Six O&rsquo;Clock News</em> on BBC Radio 4.</p>
+      <p class="hero-sub">You also get a complete log of what led the BBC News website through the day, sampled every ten minutes; all videos published to the BBC News YouTube channel; push notifications from the BBC News app; and running orders for <em>World at One</em>, <em>PM</em> and the <em>R4 Six O&rsquo;Clock News</em> on BBC Radio 4.</p>
       <p class="hero-sub">All of it generated by AI, overnight, and in your inbox before your morning meeting.</p>
       <p><span class="beta-badge">Beta</span></p>
 
-      <form class="subscribe-form" id="subscribe-form" novalidate>
-        <input type="email" id="email-input" placeholder="your@email.com" autocomplete="email" required aria-label="Email address">
+      <form class="subscribe-form" action="https://formspree.io/f/mbdewjny" method="POST">
+        <input type="email" name="email" placeholder="your@email.com" autocomplete="email" required aria-label="Email address">
         <button type="submit">Request access</button>
       </form>
-      <p class="form-note">Request beta access below. Weekdays only.</p>
-      <p class="form-success" id="form-success" role="status" aria-live="polite">Request received &mdash; we&rsquo;ll be in touch shortly.</p>
+      <p class="form-note">Request beta access above. Weekdays only.</p>
     </div>
   </section>
 
@@ -166,7 +149,7 @@
 
       <div class="detail-row">
         <span class="detail-key">Radio 4</span>
-        <span class="detail-val">Running order the <em>Six O&rsquo;Clock News</em> &mdash; what led, what followed, how long each item ran.</span>
+        <span class="detail-val">Running orders for <em>World at One</em>, <em>PM</em> and the <em>Six O&rsquo;Clock News</em> &mdash; what led, what followed, how long each item ran.</span>
       </div>
 
     </div>
@@ -186,7 +169,7 @@
       <p class="section-label">Sample issue</p>
       <div class="sample-card">
         <div>
-          <p class="sample-meta">Thursday 18 June 2026</p>
+          <p class="sample-meta">Friday 12 June 2026</p>
           <p class="sample-title">NIBs &mdash; News Intelligence Briefing</p>
         </div>
         <a href="sample.html" class="sample-link" target="_blank" rel="noopener">Read issue &rarr;</a>
@@ -200,10 +183,7 @@
   <div class="container">
     <div class="footer-inner">
       <span class="footer-copy">NIBs &mdash; nibs.news</span>
-      <div class="footer-links">
-        <a href="mailto:admin@nibs.news">admin@nibs.news</a>
-        <a href="/privacy.html">Privacy</a>
-      </div>
+      <span class="footer-contact"><a href="mailto:admin@nibs.news">admin@nibs.news</a></span>
     </div>
   </div>
 </footer>
